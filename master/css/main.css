@@ -1,0 +1,298 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  @font-face {
+    font-family:  "Anton-Regular" ;
+    src: url("../fonts/Anton-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Oswald-Regular" ;
+    src: url("../fonts/Oswald-Regular.ttf");
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .container{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 50px auto 50px;
+  }
+  .container header{
+    background-color: #95A5A6;
+    display: flex;
+    line-height: 50px;
+    font-size: 18px;
+    overflow: visible;
+    z-index: 999;
+  }
+  .container header div.brand{
+    width: 30%;
+    padding-left: 50px;
+    font-family: "Oswald-Regular";
+  }
+  .container header div.navigation{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    font-family: "Oswald-Regular";
+  }
+  .container header div.navigation div.userManagment ul{
+    list-style-type: none;
+    color: white !important;
+  }
+  .container header div.navigation div.userManagment ul li{
+    border-bottom: 1px solid white;
+    padding-left: 20px;
+    background-color: brown;
+    transition: all 0.3s linear;
+  }
+  .container header div.navigation div.userManagment ul li:hover{
+background-color:#95A5A6 ;
+  }
+  .container section{
+    width: 90%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2% 0px;
+  }
+  .container section div.component{
+    width: 30%;
+    background-color: white;
+    height: 550px;
+    font-family: "Oswald-Regular";
+  }
+  .container section div.component img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .container section div.component div.actions{
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px 0px 2px;
+    font-family: "Anton-Regular";
+    align-items: baseline;
+  }
+  .container footer{
+    background-color: #95A5A6;
+    text-align: center !important;
+    font-family: "Anton-Regular" !important;
+    line-height: 50px;
+    font-size: 14px;
+  }
+  .act{
+    color: brown;
+  }
+  .h-s{
+    display: none;
+  }
+  .btnBuy{
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: 0px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .btnBuy:hover{
+    background-color: gray;
+  }
+  @media (max-width : 1024px)
+  {
+    .container section{
+       flex-direction: column;
+       align-items: center;
+      }
+      .container section div.component{
+        width: 90%;
+      }
+  }
+ 
+  .signed{
+    width: 50%;
+margin: 5% auto;
+font-family: "Oswald-Regular";
+  }
+  .error{
+    text-align: center;
+    font-family: "Arial";
+    font-size: 22px;
+    color: red;
+  }
+  .signed span{
+    display: block;
+  }
+  .signed input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    outline: none;
+    margin-bottom: 4%;
+    text-align: center;
+  }
+  .signed input:hover{
+    outline: 2px solid #ccc;
+  }
+  .sign{
+    width: 25% !important;
+  }
+  @media (max-width : 768px)
+  {
+    .signed{
+      width: 70%;
+  margin: 5% auto;
+  font-family: "Oswald-Regular";
+    }
+    .sign{
+      width: 30% !important;
+    }
+  }
+  @media (max-width : 375px)
+  {
+    .signed{
+      width: 90%;
+  margin: 5% auto;
+  font-family: "Oswald-Regular";
+    }
+    .sign{
+      width: 40% !important;
+    }
+    .container header{
+      font-size: 10px;
+    }
+
+  }
+  .shopingCart{
+    position: relative;
+  }
+  .shopingCart .basket{
+    position: absolute;
+    top: 5px;
+    right: -15px;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    line-height: 25px;
+    font-size: 16px;
+    font-family: "Oswald-Regular";
+    text-align: center;
+  }
+  .table{
+    width: 90%;
+    margin: 0% auto;
+    overflow-x: auto;
+    font-family: "Oswald-Regular";
+  }
+  
+  .table table{
+    margin-top: 2%;
+    width: 100%;
+    text-align: center;
+   border: 1px solid #ccc;
+   border-collapse: collapse;
+  }
+  .table table tr{
+    height: 80px;
+    border: 1px solid #ccc;
+  }
+  .table table tr td,.table table tr th{
+    border: 1px solid #ccc;
+  }
+  .btnCheck{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: 0px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .btnCheck:hover{
+    background-color: navy;
+  }
+  .check{
+    width: 90%;
+    margin: 3% auto;font-family: "Oswald-Regular";
+  }
+  @media (max-width : 500px)
+  {
+    .container header{
+        font-size: 12px;
+      }
+
+      .container section div.component{
+        width: 100%;
+      }
+      .table{
+        font-size: 10px;
+        width: 95%;
+      }
+      .check{
+        width: 95%;
+        margin: 9% auto;font-family: "Oswald-Regular";
+      }
+  }
+  .shopCartContainer{
+    font-family: "Oswald-Regular" ;
+    width: 90%;
+    margin: 0% auto;
+  }
+  .shopCartContainer h1{
+    text-align: center;
+  }
+.shopCartContainer .contents
+{
+  width: 50%;
+  margin: 2% auto;
+}
+.shopCartContainer .contents label{
+  display: block;
+}
+.shopCartContainer .contents input{
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  outline: none;
+  margin-bottom: 4%;
+  text-align: center;
+}
+.shopCartContainer .contents input:hover{
+  outline: 2px solid #ccc;
+}
+@media (max-width:1024px)
+{
+.shopCartContainer .contents
+{
+  width: 80%;
+}
+}
+@media (max-width:425px)
+{
+.shopCartContainer .contents
+{
+  width: 90%;
+}
+
+}
+@media (max-width:768px)
+{
+  .btn{
+    width: 100% !important;
+  }
+
+}

@@ -1,0 +1,26 @@
+CREATE DATABASE shop-cart;
+
+CREATE TABLE users (userId int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,email varchar(150)
+,password varchar(100),userName varchar(200),contact varchar(50),address varchar (100),image varchar (150));
+
+CREATE TABLE products (productId int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+imagePath varchar(150),productName varchar(150),storageCapacity varchar(150),numberOfSim varchar(150),
+realComaraResaluation varchar (150),dualSize varchar (150),price int(5),userId int(11),
+CONSTRAINT products_users FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE ON DELETE CASCADE);
+
+CREATE TABLE orders (orderId int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,address varchar(150),
+name varchar(150),contact varchar(50),orderPrice int(5),ordeActive int(1) DEFAULT 1,userId int(11),
+CONSTRAINT orders_users FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE ON DELETE CASCADE,
+productId int(11),
+CONSTRAINT orders_products FOREIGN KEY (productId) REFERENCES products(productId) ON UPDATE CASCADE ON DELETE CASCADE );
+
+
+CREATE TABLE carts (cartId int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,totalQuanatity int(5),totalPrice int(10),
+selectedProduct int(10),createdAt Date,cartActive int(1) DEFAULT 1,userId int(11),
+CONSTRAINT carts_users FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE ON DELETE CASCADE,
+productId int(11),
+CONSTRAINT carts_products FOREIGN KEY (productId) REFERENCES products(productId) ON UPDATE CASCADE ON DELETE CASCADE,
+orderId int(11) ,
+CONSTRAINT carts_orders FOREIGN KEY (orderId) REFERENCES orders (orderId) ON UPDATE CASCADE ON DELETE CASCADE );
+
+ALTER TABLE carts DROP COLUMN selectedProduct;
